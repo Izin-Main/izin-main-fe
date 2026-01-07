@@ -1,3 +1,334 @@
-<!-- Warna warna brand bisa di define dari src/styles.css -->
-<!-- Usahain make warna brand jangan hardcode [#hexcolor] biar konsisten -->
-<h1 class="text-3xl font-bold underline text-main">Home Page</h1>
+<div id="home-container">
+    <header class="bg-background/50 backdrop-blur-sm p-4 py-0 sticky top-0 z-100 shadow-xs">
+        <div class="container mx-auto flex items-center justify-between">
+            <img src="/img/logo.webp" alt="IZINMAIN" class="w-18 h-18">
+            <div class="flex items-center gap-12 text-sm font-medium">
+                <a routerLink="/tentang">Tentang</a>
+                <a routerLink="/aktivitas">Aktivitas</a>
+                <a routerLink="/cerita">Cerita</a>
+                <a routerLink="/gabung">Gabung</a>
+                <button class="bg-main-bold text-white px-4 py-2 rounded-full font-semibold">Ikut Main</button>
+            </div>
+        </div>
+    </header>
+    
+    
+    <main class="">
+        <section id="hero" class="min-h-[80vh] flex items-center">
+            <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 py-20 md:py-32">
+                <!-- Left: Text Section -->
+                <div class="flex flex-col justify-center md:pr-12">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        Orang sibuk juga berhak <span class="text-main">main</span>.
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-500 mb-8 max-w-lg text-body">
+                        <b class="underline">izinmain</b> bantu lo keluar sebentar dari rutinitas.<br>
+                        Tanpa ribet, tanpa awkward, tanpa mikir panjang.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                        <button class="bg-main-bold hover:bg-main text-white px-6 py-3 rounded-full font-semibold text-base transition">
+                            Lihat Aktivitas
+                        </button>
+                        <a routerLink="/cerita" class="text-main-bold underline underline-offset-2 flex items-center text-base font-medium transition hover:text-main">
+                            Atau baca ceritanya dulu →
+                        </a>
+                    </div>
+                </div>
+                <!-- Right: Hero Image with floating card -->
+                <div class="flex items-center justify-center relative">
+                    <!-- Floating Card in the top right -->
+                    <div class="absolute -top-4 -right-4 bg-white/90 shadow-lg rounded-xl flex items-center gap-2 px-4 py-2 z-10 border border-neutral-200 backdrop-blur-sm" style="min-width:110px;">
+                        <lucide-icon [img]="Calendar" class="text-main-bold" [size]="40"></lucide-icon>
+                        <div class="">
+                            <span class="font-semibold whitespace-nowrap text-xl">100+</span>
+                            <p class="text-sm text-neutral-500">Aktivitas Bareng</p>
+                        </div>
+                    </div>
+                    <!-- Main Hero Image -->
+                    <img src="/img/karimun-jawa-trip.jpeg" alt="Izinmain Banner" class="rotate-3 hover:rotate-0 transition-all duration-300 w-full max-w-md md:max-w-xl h-auto object-cover rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="pain-points" class="py-16 md:py-20">
+            <div class="container mx-auto max-w-2xl px-6">
+                <!-- Headline -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-header">
+                    Pernah ngerasa gini?
+                </h2>
+
+                <!-- Pain Points List -->
+                <div class="space-y-4 mb-12">
+                    <!-- Pain Point 1 -->
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
+                        <div class="shrink-0 mt-1.5 text-main">
+                            <lucide-icon [img]="Circle" [size]="16"></lucide-icon>
+                        </div>
+                        <p class="text-neutral-700 font-body text-lg">Weekend kosong, tapi nggak tau mau ke mana</p>
+                    </div>
+
+                    <!-- Pain Point 2 -->
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
+                        <div class="shrink-0 mt-1.5 text-main">
+                            <lucide-icon [img]="Circle" [size]="16"></lucide-icon>
+                        </div>
+                        <p class="text-neutral-700 font-body text-lg">Pengen main, tapi temen susah diajak</p>
+                    </div>
+
+                    <!-- Pain Point 3 -->
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
+                        <div class="shrink-0 mt-1.5 text-main">
+                            <lucide-icon [img]="Circle" [size]="16"></lucide-icon>
+                        </div>
+                        <p class="text-neutral-700 font-body text-lg">Capek ngatur itinerary</p>
+                    </div>
+
+                    <!-- Pain Point 4 -->
+                    <div class="flex items-start gap-4 bg-white rounded-lg p-4 shadow-sm border border-neutral-200">
+                        <div class="shrink-0 mt-1.5 text-main">
+                            <lucide-icon [img]="Circle" [size]="16"></lucide-icon>
+                        </div>
+                        <p class="text-neutral-700 font-body text-lg">Takut awkward ikut rame-rame</p>
+                    </div>
+                </div>
+
+                <!-- Closing Line -->
+                <!-- <p class="text-center text-xl md:text-2xl font-semibold text-main font-header">
+                    Tenang. Lo nggak sendirian.
+                </p> -->
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="final-cta" class="relative py-16 md:py-20 overflow-hidden flex items-center justify-center">
+            <!-- Background Image Karimun with Orange Overlay -->
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <img 
+                    src="/img/karimun-jawa-trip.jpeg" 
+                    alt="Karimun Background" 
+                    class="w-full h-full object-cover object-center opacity-30"
+                    style="filter: blur(1px);" 
+                    loading="lazy"
+                />
+                <div class="absolute inset-0 bg-main/80"></div>
+            </div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white font-header drop-shadow">
+                    Lo nggak perlu izin dari siapa-siapa.
+                </h2>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 font-body drop-shadow">
+                    Tapi kalau butuh alasan, kita ada.
+                </p>
+                <button class="bg-white text-main hover:bg-neutral-100 px-8 py-4 rounded-full font-semibold text-lg transition-colors font-header shadow-lg">
+                    Ikut Main Sekarang
+                </button>
+            </div>
+        </section>
+
+        <!-- Solutions Section -->
+        <section id="solutions" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <!-- Headline -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-header text-neutral-900">
+                    Apa itu izinmain?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                    <!-- Card 1: Aktivitasnya udah siap -->
+                    <div class="flex flex-col items-center text-center rounded-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="mb-6 text-main transition-transform duration-300 hover:scale-110">
+                            <lucide-icon [img]="Calendar" [size]="48"></lucide-icon>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 font-header text-neutral-900">
+                            Aktivitasnya udah siap
+                        </h3>
+                        <p class="text-neutral-700 font-body text-lg">
+                            Tinggal dateng. Kita yang urus.
+                        </p>
+                    </div>
+
+                    <!-- Card 2: Orang-orangnya aman -->
+                    <div class="flex flex-col items-center text-center rounded-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="mb-6 text-main transition-transform duration-300 hover:scale-110">
+                            <lucide-icon [img]="Users" [size]="48"></lucide-icon>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 font-header text-neutral-900">
+                            Orang-orangnya aman
+                        </h3>
+                        <p class="text-neutral-700 font-body text-lg">
+                            Sama-sama pengen main, bukan pamer.
+                        </p>
+                    </div>
+
+                    <!-- Card 3: Nggak harus jago -->
+                    <div class="flex flex-col items-center text-center rounded-lg p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                        <div class="mb-6 text-main transition-transform duration-300 hover:scale-110">
+                            <lucide-icon [img]="Heart" [size]="48"></lucide-icon>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold mb-4 font-header text-neutral-900">
+                            Nggak harus jago
+                        </h3>
+                        <p class="text-neutral-700 font-body text-lg">
+                            Dateng aja dulu. Sisanya nyusul.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Types Section -->
+        <section id="activity-types" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <!-- Headline -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-header text-neutral-900">
+                    Mainnya bisa apa aja?
+                </h2>
+
+                <!-- Activity Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+                    <!-- Card 1: Open Trip -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="relative">
+                            <img src="https://picsum.photos/400/300?random=1" alt="Open Trip" class="w-full h-48 object-cover" loading="lazy">
+                            <span class="absolute top-3 left-3 bg-main text-white px-3 py-1 rounded-full text-sm font-semibold font-header">
+                                Open Trip
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-neutral-700 font-body text-lg">
+                                Jalan-jalan tanpa mikir ribet
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Event -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="relative">
+                            <img src="https://picsum.photos/400/300?random=2" alt="Event" class="w-full h-48 object-cover" loading="lazy">
+                            <span class="absolute top-3 left-3 bg-main text-white px-3 py-1 rounded-full text-sm font-semibold font-header">
+                                Event
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-neutral-700 font-body text-lg">
+                                Capek yang sehat
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Olahraga Bareng -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                        <div class="relative">
+                            <img src="https://picsum.photos/400/300?random=3" alt="Olahraga Bareng" class="w-full h-48 object-cover" loading="lazy">
+                            <span class="absolute top-3 left-3 bg-main text-white px-3 py-1 rounded-full text-sm font-semibold font-header">
+                                Olahraga Bareng
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-neutral-700 font-body text-lg">
+                                Ketemu orang baru
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center">
+                    <a routerLink="/aktivitas" class="inline-flex items-center text-main hover:text-main-bold font-medium font-body transition-colors">
+                        Lihat semua aktivitas →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Story Section -->
+        <section id="experience-story" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Quote -->
+                    <div class="order-2 md:order-1">
+                        <blockquote class="text-2xl md:text-3xl font-semibold text-neutral-900 font-header leading-relaxed mb-6">
+                            "Gue kira bakal awkward.<br>
+                            Ternyata pulangnya malah pengen ikut lagi."
+                        </blockquote>
+                        <p class="text-lg text-neutral-700 font-body">
+                            — Raka, 27
+                        </p>
+                    </div>
+
+                    <!-- Right: Foto real -->
+                    <div class="order-1 md:order-2">
+                        <img src="/img/karimun-jawa-trip.jpeg" alt="Experience Story" class="w-full rounded-2xl shadow-lg object-cover" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Feel Section -->
+        <section id="community-feel" class="py-16 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-header text-neutral-900">
+                        Bukan komunitas eksklusif.
+                    </h2>
+                    <p class="text-xl text-neutral-700 font-body">
+                        Dateng sebagai orang asing.<br>
+                        Pulang sebagai circle sementara.
+                    </p>
+                </div>
+
+                <!-- Grid foto kecil (wall) -->
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+                    <img src="https://picsum.photos/200/200?random=4" alt="Community" class="w-full aspect-square object-cover rounded-lg" loading="lazy">
+                    <img src="https://picsum.photos/200/200?random=5" alt="Community" class="w-full aspect-square object-cover rounded-lg" loading="lazy">
+                    <img src="https://picsum.photos/200/200?random=6" alt="Community" class="w-full aspect-square object-cover rounded-lg" loading="lazy">
+                    <img src="https://picsum.photos/200/200?random=7" alt="Community" class="w-full aspect-square object-cover rounded-lg" loading="lazy">
+                    <img src="https://picsum.photos/200/200?random=8" alt="Community" class="w-full aspect-square object-cover rounded-lg" loading="lazy">
+                    <img src="https://picsum.photos/200/200?random=9" alt="Community" class="w-full aspect-square object-cover rounded-lg" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    
+    <footer class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo & Tagline -->
+                <div class="md:col-span-2">
+                    <img src="/img/logo.webp" alt="IZINMAIN" class="w-16 h-16 mb-4">
+                    <p class="text-neutral-500 font-body text-sm max-w-md">
+                        izinmain.id — tempat orang sibuk minta izin buat main
+                    </p>
+                </div>
+
+                <!-- Social Links -->
+                <div class="md:col-span-2">
+                    <h3 class="font-header font-semibold mb-4 text-neutral-900">Hubungi Kita</h3>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://instagram.com/izinmain" target="_blank" class="flex items-center gap-3 text-neutral-600 hover:text-main transition-colors font-body">
+                            <lucide-icon [img]="Instagram" [size]="20"></lucide-icon>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center gap-3 text-neutral-600 hover:text-main transition-colors font-body">
+                            <lucide-icon [img]="MessageCircle" [size]="20"></lucide-icon>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="mailto:hello@izinmain.id" class="flex items-center gap-3 text-neutral-600 hover:text-main transition-colors font-body">
+                            <lucide-icon [img]="Mail" [size]="20"></lucide-icon>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-neutral-200 pt-8 text-center">
+                <p class="text-neutral-400 text-sm font-body">
+                    © 2026 izinmain.id — tempat orang sibuk minta izin buat main
+                </p>
+            </div>
+        </div>
+    </footer>
+</div>
