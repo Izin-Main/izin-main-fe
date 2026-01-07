@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+/* ============================================
+   TAILWIND CSS CUSTOM THEME CONFIGURATION
+   ============================================
+   
+   Konfigurasi warna dan theme custom untuk project.
+   Gunakan class seperti: text-main, bg-secondary, border-accent, dll
+*/
+
+@theme {
+    /* ============================================
+        COLOR PALETTE - Custom Brand Colors
+        ============================================ */
+  
+    --color-main: #3b82f6;
+    --color-secondary: #8b5cf6;
+    --color-accent: #f59e0b;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+    --color-neutral: #6b7280;
+
+    /* ============================================
+        SPACING - Custom Spacing Scale (Optional)
+        ============================================ */
+    /* Default Tailwind spacing sudah cukup, 
+        tapi bisa ditambahkan custom spacing jika perlu */
+    
+    /* ============================================
+        TYPOGRAPHY - Custom Font Sizes (Optional)
+        ============================================ */
+    /* Default Tailwind typography sudah cukup,
+        tapi bisa ditambahkan custom font sizes jika perlu */
+
+    /* ============================================
+        BORDER RADIUS - Custom Border Radius (Optional)
+        ============================================ */
+    /* Default Tailwind border radius sudah cukup,
+        tapi bisa ditambahkan custom radius jika perlu */
+}
+
